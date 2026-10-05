@@ -49,6 +49,18 @@ public class SinglyListArbreClass<T> {
         return sb.toString();
     }
 	
+	public String parcoursPostfixe() {
+	    StringBuilder sb = new StringBuilder();
+	    if (this.left != null) {
+	        sb.append(this.left.parcoursPostfixe()).append(" ");
+	    }
+	    if (this.right != null) {
+	        sb.append(this.right.parcoursPostfixe()).append(" ");
+	    }
+	    sb.append(this.value);
+	    return sb.toString();
+	}
+	
 	public String toString() {
         return parcoursPrefixe();
     }
